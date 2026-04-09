@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="google-site-verification" content="ZkDTXu3gaSYZpN0jNjnkQVwPd9Dqf4kefDZvLxN7oIU" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services | Allegheny Capital | M&A Advisory & Capital Markets</title>
+<meta name="description" content="Allegheny Capital advises lower middle market companies on sell-side and buy-side M&A, capital markets transactions, and debt and equity raises.">
+<meta name="keywords" content="Ty Balson, Tylor Balson, Ty Matthew Balson, M&A advisory, capital markets, lower middle market, debt raise, equity raise">
+<link rel="canonical" href="https://allegheny.capital/services">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Archivo:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:       #0a1628;
+  --navy-mid:   #0f2040;
+  --gold:       #b8966a;
+  --gold-light: #d4b483;
+  --gold-dim:   rgba(184,150,106,0.18);
+  --cream:      #f5f0e8;
+  --cream-dark: #ede5d4;
+  --slate:      #8a9ab0;
+  --text:       #2d3748;
+  --white:      #ffffff;
+  --nav-h:      68px;
+  --pg-pad:     56px;
+  --ease:       cubic-bezier(0.22,1,0.36,1);
+  --fast:       0.18s;
+  --mid:        0.30s;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{background:var(--cream);font-family:'Archivo',sans-serif;color:var(--navy);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+/* NAV */
+.nav{background:var(--navy);height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 var(--pg-pad);position:sticky;top:0;z-index:200;border-bottom:1px solid rgba(184,150,106,.15)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;color:var(--white);letter-spacing:.06em}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:36px;list-style:none;align-items:center}
+.nav-links a{font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);transition:color var(--fast);position:relative;padding-bottom:2px}
+.nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform var(--fast) var(--ease);transform-origin:left}
+.nav-links a:hover,.nav-links a.active{color:var(--gold-light)}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
+
+/* PAGE HEADER */
+.page-header{background:var(--navy);padding:80px var(--pg-pad) 64px;position:relative;overflow:hidden}
+.page-header::after{content:'';position:absolute;bottom:0;left:var(--pg-pad);right:var(--pg-pad);height:1px;background:linear-gradient(90deg,rgba(184,150,106,.4),transparent 70%)}
+.ph-bg{position:absolute;right:40px;bottom:-20px;font-family:'Cormorant Garamond',serif;font-size:200px;font-weight:300;color:rgba(255,255,255,.028);line-height:1;user-select:none;pointer-events:none;letter-spacing:-.03em}
+.ph-inner{max-width:680px;position:relative}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:block}
+.page-header h1{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;color:var(--white);line-height:1.08;margin-bottom:24px}
+.page-header h1 em{font-style:italic;color:var(--gold-light)}
+.page-header p{font-size:15px;color:var(--slate);line-height:1.8;font-weight:300;max-width:560px}
+
+/* SERVICES GRID */
+.services-wrap{max-width:1100px;margin:0 auto;padding:80px var(--pg-pad) 96px}
+
+.services-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--cream-dark);border:1px solid var(--cream-dark);animation:fadeUp .5s var(--ease) both}
+
+.service-card{background:var(--white);padding:52px 48px;display:flex;flex-direction:column;gap:0;transition:background var(--mid) var(--ease)}
+.service-card:hover{background:var(--navy)}
+
+.service-num{font-family:'Cormorant Garamond',serif;font-size:11px;font-weight:400;color:var(--gold);letter-spacing:.22em;text-transform:uppercase;margin-bottom:32px;display:block;transition:color var(--mid)}
+.service-card:hover .service-num{color:rgba(184,150,106,.6)}
+
+.service-title{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:300;color:var(--navy);line-height:1.1;margin-bottom:24px;transition:color var(--mid)}
+.service-card:hover .service-title{color:var(--white)}
+
+.service-divider{height:1px;background:rgba(138,154,176,.25);margin-bottom:28px;transition:background var(--mid)}
+.service-card:hover .service-divider{background:rgba(138,154,176,.2)}
+
+.service-body{font-size:15px;line-height:1.85;color:var(--text);font-weight:300;transition:color var(--mid)}
+.service-card:hover .service-body{color:rgba(255,255,255,.72)}
+
+.service-bullets{list-style:none;margin-top:24px;display:flex;flex-direction:column;gap:10px}
+.service-bullets li{font-size:13px;color:#6b7c93;line-height:1.5;padding-left:16px;position:relative;transition:color var(--mid)}
+.service-bullets li::before{content:'—';position:absolute;left:0;color:var(--gold);font-size:11px}
+.service-card:hover .service-bullets li{color:rgba(255,255,255,.5)}
+.service-card:hover .service-bullets li::before{color:rgba(184,150,106,.6)}
+
+/* CONTACT SECTION */
+.contact-section{padding:0 var(--pg-pad) 96px;max-width:1100px;margin:0 auto}
+.contact-box{background:var(--navy);padding:52px 56px;display:grid;grid-template-columns:1fr 380px;gap:64px;align-items:start}
+.contact-left{}
+.contact-eyebrow{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:block}
+.contact-title{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:300;color:var(--white);line-height:1.15;margin-bottom:16px}
+.contact-title em{font-style:italic;color:var(--gold-light)}
+.contact-body{font-size:14px;color:var(--slate);line-height:1.8;font-weight:300}
+.contact-form{display:flex;flex-direction:column;gap:10px}
+.contact-form input,.contact-form textarea{width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);padding:12px 16px;color:var(--white);font-family:'Archivo',sans-serif;font-size:13px;font-weight:300;outline:none;transition:border-color var(--fast);border-radius:0}
+.contact-form input::placeholder,.contact-form textarea::placeholder{color:rgba(255,255,255,.3)}
+.contact-form input:focus,.contact-form textarea:focus{border-color:var(--gold)}
+.contact-form textarea{min-height:100px;resize:vertical}
+.contact-submit{background:var(--gold);color:var(--navy);padding:13px 20px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-family:'Archivo',sans-serif;border:none;cursor:pointer;width:100%;transition:opacity var(--fast)}
+.contact-submit:hover{opacity:.87}
+@media(max-width:860px){
+  .nav-links { gap:20px; }
+  .nav-links a { font-size:10px; letter-spacing:0.08em; }
+  .nav-logo { font-size:18px; }.contact-box{grid-template-columns:1fr;gap:36px;padding:36px 28px}.contact-section{padding-left:20px;padding-right:20px}}
+
+/* FOOTER */
+.footer{background:var(--navy);border-top:1px solid rgba(184,150,106,.12);padding:32px var(--pg-pad);display:flex;align-items:center;justify-content:center}
+.footer-copy{font-size:13px;color:var(--slate)}
+
+@media(max-width:860px){
+  :root{--pg-pad:20px}
+  .page-header h1{font-size:36px}
+  .ph-bg{display:none}
+  .services-grid{grid-template-columns:1fr}
+  .service-card{padding:40px 28px}
+  .cta-inner{flex-direction:column;gap:24px}
+  .cta-btn{width:100%;text-align:center}
+}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JYNYPNQ408"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-JYNYPNQ408');
+</script>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">Allegheny <span>Capital</span></a>
+  <ul class="nav-links">
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="index.html">Transactions</a></li>
+  </ul>
+</nav>
+
+<div class="page-header">
+  <div class="ph-bg">Services</div>
+  <div class="ph-inner">
+    <span class="eyebrow">Allegheny Capital · What We Do</span>
+    <h1>Advisory Services for the <em>Lower Middle Market</em></h1>
+    <p>Allegheny Capital provides transaction advisory and capital markets services to founder-owned businesses, private equity-backed platforms, and corporate development teams across the lower middle market.</p>
+  </div>
+</div>
+
+<div class="services-wrap">
+  <div class="services-grid">
+
+    <!-- Buy Your Business -->
+    <div class="service-card">
+      <span class="service-num">01 — Buy-Side M&amp;A</span>
+      <div class="service-title">Buy Your Business</div>
+      <div class="service-divider"></div>
+      <div class="service-body">
+        Partner with lower middle-market private equity groups and their portfolio company executive teams to systematically grow platforms through strategic add-on acquisitions. We provide end-to-end support throughout the entire acquisition lifecycle, identifying and qualifying potential targets, originating opportunities, and facilitating introductions.
+      </div>
+      <ul class="service-bullets">
+        <li>Target identification, screening, and outreach</li>
+        <li>Strategic fit analysis and valuation</li>
+        <li>LOI structuring and negotiation</li>
+        <li>Due diligence coordination and deal management</li>
+        <li>Purchase agreement negotiation through close</li>
+      </ul>
+    </div>
+
+    <!-- Sell Your Business -->
+    <div class="service-card">
+      <span class="service-num">02 — Sell-Side M&amp;A</span>
+      <div class="service-title">Sell Your Business</div>
+      <div class="service-divider"></div>
+      <div class="service-body">
+        Guide founder-owned businesses from initial preparation and strategic positioning to final execution and successful transaction. We work closely with business owners approaching retirement or seeking liquidity events to maximize enterprise value, structure optimal deal terms, identify qualified buyers, and navigate complex negotiations.
+      </div>
+      <ul class="service-bullets">
+        <li>Pre-transaction preparation and positioning</li>
+        <li>Confidential information memorandum preparation</li>
+        <li>Qualified buyer identification and outreach</li>
+        <li>Offer evaluation and negotiation support</li>
+        <li>Due diligence management through close</li>
+      </ul>
+    </div>
+
+    <!-- Financial & KPI Reporting -->
+    <div class="service-card">
+      <span class="service-num">03 — Reporting</span>
+      <div class="service-title">Financial &amp; KPI Reporting</div>
+      <div class="service-divider"></div>
+      <div class="service-body">
+        Deliver customized monthly, quarterly, and annual reporting packages that provide real-time visibility into your business performance. We transform raw financial and operational data into strategic intelligence that empowers leadership teams to make informed decisions, identify trends early, optimize resource allocation, and drive sustainable growth.
+      </div>
+      <ul class="service-bullets">
+        <li>Monthly and quarterly management reporting packages</li>
+        <li>KPI dashboard design and implementation</li>
+        <li>Financial model builds and scenario analysis</li>
+        <li>Board and investor reporting materials</li>
+        <li>Operational performance benchmarking</li>
+      </ul>
+    </div>
+
+    <!-- Automation -->
+    <div class="service-card">
+      <span class="service-num">04 — Technology</span>
+      <div class="service-title">Automation</div>
+      <div class="service-divider"></div>
+      <div class="service-body">
+        Implement cutting-edge artificial intelligence solutions across phone systems, chat platforms, and email to dramatically streamline communications. Our automation services leverage natural language processing, machine learning algorithms, and intelligent workflow automation to reduce manual tasks, freeing your team to focus on high-value activities.
+      </div>
+      <ul class="service-bullets">
+        <li>AI-powered communication workflows</li>
+        <li>CRM and pipeline automation</li>
+        <li>Document generation and processing</li>
+        <li>Reporting and data aggregation automation</li>
+        <li>Custom workflow design and implementation</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="contact-section">
+  <div class="contact-box">
+    <div class="contact-left">
+      <span class="contact-eyebrow">Get In Touch</span>
+      <div class="contact-title">Let's discuss your <em>needs</em></div>
+    </div>
+    <form action="https://formspree.io/f/xlggnwlr" method="POST" class="contact-form" id="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="text" name="company" placeholder="Company">
+        <textarea name="message" placeholder="How can we help?" required></textarea>
+        <button type="submit" class="contact-submit">Send Message</button>
+        <p class="form-success" id="form-success" style="display:none;color:var(--gold);font-size:13px;text-align:center;margin-top:10px;">Thank you — we'll be in touch shortly.</p>
+      </form>
+      <script>
+        var form = document.getElementById('contact-form');
+        if(form) {
+          form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            var data = new FormData(form);
+            fetch(form.action, {method:'POST', body:data, headers:{'Accept':'application/json'}})
+              .then(function(r) {
+                if(r.ok) {
+                  form.style.display='none';
+                  document.getElementById('form-success').style.display='block';
+                }
+              });
+          });
+        }
+      </script>
+    </div>
+  </div>
+
+<footer class="footer">
+  <div class="footer-copy">© 2026 Allegheny Capital, LLC. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
