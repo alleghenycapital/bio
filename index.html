@@ -4,17 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tylor Balson</title>
-<meta name="description" content="M&A Advisory Transaction Experience — Tylor Balson">
+<meta name="description" content=" ">
 <meta name="keywords" content="Ty Balson, Tylor Balson, Ty Matthew, Ty Matthew Balson, Tylor Matthew Balson">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Archivo:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Archivo',sans-serif;background:#f0ede5;color:#111;overflow-x:hidden;}
+html,body{max-width:100%;overflow-x:hidden;}
+body{font-family:'Archivo',sans-serif;background:#f0ede5;color:#111;}
  
 /* TOPBAR */
-.topbar{background:#fff;border-bottom:1px solid #e0ddd5;display:flex;align-items:stretch;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100;}
+.topbar{background:#fff;border-bottom:1px solid #e0ddd5;display:flex;align-items:stretch;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100;width:100%;}
 .filterbar{display:flex;align-items:stretch;}
 .filter-btn{padding:0 22px;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#111;background:#fff;border:none;border-radius:0;cursor:pointer;font-family:'Archivo',sans-serif;transition:background 0.15s,color 0.15s;}
 .filter-btn:hover{background:#111;color:#fff;}
@@ -25,36 +26,36 @@ body{font-family:'Archivo',sans-serif;background:#f0ede5;color:#111;overflow-x:h
 .stat-lbl{font-size:8px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#999;margin-top:3px;}
  
 /* GRID */
-.tombstone-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#d0cec8;margin:1px;}
+.tombstone-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#d0cec8;margin:1px;width:calc(100% - 2px);}
  
 /* TOMBSTONE */
-.tombstone{background:#fff;padding:28px 20px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;text-decoration:none;color:inherit;border:3px solid transparent;transition:border-color 0.15s;}
+.tombstone{background:#fff;padding:24px 16px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;text-decoration:none;color:inherit;border:3px solid transparent;transition:border-color 0.15s;min-width:0;}
 .tombstone:hover{border:3px solid #111;}
  
-.t-date{font-size:9px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#999;margin-bottom:20px;}
+.t-date{font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#999;margin-bottom:16px;width:100%;}
  
-/* Logo zones */
-.t-logo{height:clamp(60px,9vw,110px);display:flex;align-items:center;justify-content:center;width:100%;gap:8px;}
-.t-logo img{max-height:clamp(50px,8vw,100px);max-width:90%;width:auto;object-fit:contain;}
-.t-logo-sub{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:4px;}
-.t-logo-sub img{max-height:clamp(22px,3.5vw,40px);max-width:70%;object-fit:contain;opacity:0.7;}
-.t-portfolio{font-size:8px;color:#bbb;font-style:italic;margin-top:3px;}
+/* Logo zones — uniform fixed height, logos scale inside */
+.t-logo{height:80px;display:flex;align-items:center;justify-content:center;width:100%;}
+.t-logo img{height:70px;width:100%;object-fit:contain;}
+.t-logo-sub{height:36px;display:flex;align-items:center;justify-content:center;gap:6px;margin-top:4px;width:100%;}
+.t-logo-sub img{height:30px;width:100%;object-fit:contain;opacity:0.7;}
+.t-portfolio{font-size:10px;color:#bbb;font-style:italic;margin-top:4px;width:100%;}
  
-.t-action{font-size:9px;color:#aaa;margin:10px 0;font-style:italic;line-height:1.4;}
+.t-action{font-size:11px;color:#aaa;margin:10px 0;font-style:italic;line-height:1.4;width:100%;}
 .t-divider{width:28px;height:0.5px;background:#e0ddd5;margin:0 auto 10px;}
-.t-amount{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:400;color:#111;margin:6px 0 4px;}
-.t-amount-label{font-size:8px;color:#999;letter-spacing:0.06em;line-height:1.4;}
+.t-amount{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;color:#111;margin:6px 0 4px;width:100%;}
+.t-amount-label{font-size:11px;color:#999;letter-spacing:0.06em;line-height:1.4;width:100%;}
  
 .t-spacer{flex:1;min-height:10px;}
  
-/* Footer */
-.t-footer{width:100%;border-top:0.5px solid #e0ddd5;padding-top:10px;margin-top:14px;display:flex;align-items:center;justify-content:center;gap:6px;}
-.t-employer{font-size:9px;font-weight:600;color:#111;letter-spacing:0.06em;}
-.t-sep{font-size:9px;color:#ccc;}
-.t-type{font-size:9px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#999;}
+/* Tombstone footer */
+.t-footer{width:100%;border-top:0.5px solid #e0ddd5;padding-top:10px;margin-top:14px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;}
+.t-employer{font-size:12px;font-weight:600;color:#111;letter-spacing:0.06em;}
+.t-sep{font-size:12px;color:#ccc;}
+.t-type{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#999;}
  
 /* Logo fallback text */
-.logo-text{font-size:11px;font-weight:500;color:#333;line-height:1.3;text-align:center;}
+.logo-text{font-size:12px;font-weight:500;color:#333;line-height:1.3;text-align:center;}
  
 /* CONTACT */
 .contact-card{background:#fff;padding:28px 24px;display:flex;flex-direction:column;gap:12px;justify-content:center;border:3px solid transparent;}
@@ -69,7 +70,18 @@ body{font-family:'Archivo',sans-serif;background:#f0ede5;color:#111;overflow-x:h
 footer{background:#fff;border-top:1px solid #e0ddd5;padding:18px 48px;text-align:center;font-size:11px;color:#999;font-family:'Archivo',sans-serif;}
  
 @media(max-width:1100px){.tombstone-grid{grid-template-columns:repeat(3,1fr);}}
-@media(max-width:768px){.tombstone-grid{grid-template-columns:repeat(2,1fr);}.topbar{padding:0 12px;}.filter-btn{padding:0 12px;font-size:9px;}.stats-bar{gap:0;}}
+@media(max-width:768px){
+  .tombstone-grid{grid-template-columns:repeat(2,1fr);}
+  .topbar{height:auto;flex-wrap:wrap;}
+  .filterbar{width:100%;border-bottom:1px solid #e0ddd5;}
+  .filter-btn{padding:10px 14px;font-size:9px;flex:1;}
+  .stats-bar{width:100%;border-left:none;justify-content:space-around;}
+  .stat{padding:8px 12px;border-right:none;border-left:1px solid #e0ddd5;}
+  .t-logo{height:60px;}
+  .t-logo img{height:52px;}
+  .t-logo-sub{height:28px;}
+  .t-logo-sub img{height:24px;}
+}
 @media(max-width:480px){.tombstone-grid{grid-template-columns:1fr;}}
 </style>
 </head>
