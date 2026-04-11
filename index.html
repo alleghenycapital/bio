@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tylor Balson</title>
-<meta name="description" content=" ">
+<meta name="description" content="M&A Advisory Transaction Experience — Tylor Balson">
 <meta name="keywords" content="Ty Balson, Tylor Balson, Ty Matthew, Ty Matthew Balson, Tylor Matthew Balson">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,10 +34,10 @@ body{font-family:'Archivo',sans-serif;background:#f0ede5;color:#111;overflow-x:h
 .t-date{font-size:9px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#999;margin-bottom:20px;}
  
 /* Logo zones */
-.t-logo{height:clamp(40px,6vw,70px);display:flex;align-items:center;justify-content:center;width:100%;gap:8px;}
-.t-logo img{max-height:clamp(32px,5vw,60px);max-width:clamp(80px,12vw,140px);width:100%;object-fit:contain;}
+.t-logo{height:clamp(60px,9vw,110px);display:flex;align-items:center;justify-content:center;width:100%;gap:8px;}
+.t-logo img{max-height:clamp(50px,8vw,100px);max-width:90%;width:auto;object-fit:contain;}
 .t-logo-sub{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:4px;}
-.t-logo-sub img{max-height:clamp(16px,2.5vw,28px);max-width:clamp(50px,7vw,90px);object-fit:contain;opacity:0.7;}
+.t-logo-sub img{max-height:clamp(22px,3.5vw,40px);max-width:70%;object-fit:contain;opacity:0.7;}
 .t-portfolio{font-size:8px;color:#bbb;font-style:italic;margin-top:3px;}
  
 .t-action{font-size:9px;color:#aaa;margin:10px 0;font-style:italic;line-height:1.4;}
@@ -66,7 +66,7 @@ body{font-family:'Archivo',sans-serif;background:#f0ede5;color:#111;overflow-x:h
 .send-btn:hover{background:#333;}
 .contact-success{display:none;text-align:center;padding:20px 0;font-size:13px;color:#111;}
  
-footer{background:#000;border-top:1px solid #222;padding:18px 48px;text-align:center;font-size:11px;color:rgba(255,255,255,0.35);font-family:'Archivo',sans-serif;}
+footer{background:#fff;border-top:1px solid #e0ddd5;padding:18px 48px;text-align:center;font-size:11px;color:#999;font-family:'Archivo',sans-serif;}
  
 @media(max-width:1100px){.tombstone-grid{grid-template-columns:repeat(3,1fr);}}
 @media(max-width:768px){.tombstone-grid{grid-template-columns:repeat(2,1fr);}.topbar{padding:0 12px;}.filter-btn{padding:0 12px;font-size:9px;}.stats-bar{gap:0;}}
@@ -213,7 +213,7 @@ footer{background:#000;border-top:1px solid #222;padding:18px 48px;text-align:ce
     <div class="t-divider"></div>
     <div class="t-logo"><img src="logos/BradyPLUS_Logo.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">BradyPLUS</span></div>
     <div class="t-portfolio">a portfolio company of</div>
-    <div class="t-logo-sub"><img src="logos/kelso.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none;font-size:9px;">Kelso</span></div>
+    <div class="t-logo-sub"><img src="logos/Kelso.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none;font-size:9px;">Kelso</span></div>
     <div class="t-spacer"></div>
     <div class="t-footer"><span class="t-employer">Stifel</span><span class="t-sep">·</span><span class="t-type">Sell-Side</span></div>
   </a>
@@ -450,7 +450,6 @@ footer{background:#000;border-top:1px solid #222;padding:18px 48px;text-align:ce
     <form id="cf" onsubmit="sendContact(event)">
       <input type="text" id="cname" placeholder="Name" required>
       <input type="email" id="cemail" placeholder="Email" required style="margin-top:8px;">
-      <input type="text" id="ccompany" placeholder="Company" style="margin-top:8px;">
       <textarea id="cmessage" placeholder="Message" rows="3" style="margin-top:8px;"></textarea>
       <button type="submit" class="send-btn" style="margin-top:10px;">Send</button>
     </form>
@@ -491,12 +490,11 @@ function sendContact(e) {
   e.preventDefault();
   var name = document.getElementById('cname').value;
   var email = document.getElementById('cemail').value;
-  var company = document.getElementById('ccompany').value;
   var message = document.getElementById('cmessage').value;
   fetch('https://formspree.io/f/mojpgngn', {
     method: 'POST',
     headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-    body: JSON.stringify({name:name, email:email, company:company, message:message, _replyto:email})
+    body: JSON.stringify({name:name, email:email, message:message, _replyto:email})
   }).then(function(r){
     if(r.ok){
       document.getElementById('cf').style.display = 'none';
