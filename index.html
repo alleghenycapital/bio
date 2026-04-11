@@ -397,7 +397,7 @@ function sendContact(e) {
   e.preventDefault();
   var name = document.getElementById('cname').value;
   var email = document.getElementById('cemail').value;
-  fetch('hhttps://formspree.io/f/mojpgngn', {
+  fetch('https://formspree.io/f/mojpgngn', {
     method: 'POST',
     headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
     body: JSON.stringify({name: name, email: email, _replyto: email})
