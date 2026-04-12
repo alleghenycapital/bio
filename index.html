@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tylor Balson</title>
+<title> </title>
 <meta name="description" content=" ">
 <meta name="keywords" content="Ty Balson, Tylor Balson, Ty Matthew, Ty Matthew Balson, Tylor Matthew Balson">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,42 +20,44 @@ body{font-family:'Archivo',sans-serif;background:#f0ede5;color:#111;}
 .filter-btn{padding:0 22px;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#111;background:#fff;border:none;border-radius:0;cursor:pointer;font-family:'Archivo',sans-serif;transition:background 0.15s,color 0.15s;}
 .filter-btn:hover{background:#111;color:#fff;}
 .filter-btn.active{background:#111;color:#fff;}
-.stats-bar{display:flex;align-items:center;border-left:1px solid #e0ddd5;}
-.stat{padding:0 28px;border-right:1px solid #e0ddd5;text-align:right;display:flex;flex-direction:column;justify-content:center;height:56px;}
+.stats-bar{display:flex;align-items:stretch;border-left:1px solid #e0ddd5;}
+.stat{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 16px;border-right:1px solid #e0ddd5;}
+.stat:last-child{border-right:none;}
 .stat-val{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:#111;line-height:1;}
 .stat-lbl{font-size:8px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#999;margin-top:3px;}
  
 /* GRID */
 .tombstone-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#d0cec8;margin:1px;width:calc(100% - 2px);}
  
-/* TOMBSTONE */
-.tombstone{background:#fff;padding:24px 16px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;text-decoration:none;color:inherit;border:3px solid transparent;transition:border-color 0.15s;min-width:0;}
+/* TOMBSTONE — content area is flex column, footer pinned to bottom */
+.tombstone{background:#fff;padding:24px 16px 0;display:flex;flex-direction:column;align-items:center;text-align:center;text-decoration:none;color:inherit;border:3px solid transparent;transition:border-color 0.15s;min-width:0;}
 .tombstone:hover{border:3px solid #111;}
  
-.t-date{font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#999;margin-bottom:16px;width:100%;}
+/* Inner content wrapper — grows to fill, centers content vertically */
+.t-body{flex:1;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 0 16px;}
  
-/* Logo zones — uniform fixed height, logos scale inside */
+.t-date{font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#999;margin-bottom:18px;width:100%;}
+ 
+/* Logo zones — all same fixed height so logos are uniform */
 .t-logo{height:80px;display:flex;align-items:center;justify-content:center;width:100%;}
-.t-logo img{height:70px;width:100%;object-fit:contain;}
-.t-logo-sub{height:36px;display:flex;align-items:center;justify-content:center;gap:6px;margin-top:4px;width:100%;}
-.t-logo-sub img{height:30px;width:100%;object-fit:contain;opacity:0.7;}
-.t-portfolio{font-size:10px;color:#bbb;font-style:italic;margin-top:4px;width:100%;}
+.t-logo img{height:72px;width:100%;object-fit:contain;}
+.t-logo-sub{height:48px;display:flex;align-items:center;justify-content:center;gap:6px;margin-top:4px;width:100%;}
+.t-logo-sub img{height:44px;width:100%;object-fit:contain;opacity:0.8;}
+.t-portfolio{font-size:11px;color:#bbb;font-style:italic;margin-top:5px;margin-bottom:2px;width:100%;}
  
-.t-action{font-size:11px;color:#aaa;margin:10px 0;font-style:italic;line-height:1.4;width:100%;}
-.t-divider{width:28px;height:0.5px;background:#e0ddd5;margin:0 auto 10px;}
-.t-amount{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;color:#111;margin:6px 0 4px;width:100%;}
-.t-amount-label{font-size:11px;color:#999;letter-spacing:0.06em;line-height:1.4;width:100%;}
+.t-action{font-size:12px;color:#aaa;margin:12px 0;font-style:italic;line-height:1.4;width:100%;}
+.t-divider{width:28px;height:0.5px;background:#e0ddd5;margin:0 auto 12px;}
+.t-amount{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:400;color:#111;margin:8px 0 4px;width:100%;}
+.t-amount-label{font-size:12px;color:#999;letter-spacing:0.06em;line-height:1.4;width:100%;}
  
-.t-spacer{flex:1;min-height:10px;}
- 
-/* Tombstone footer */
-.t-footer{width:100%;border-top:0.5px solid #e0ddd5;padding-top:10px;margin-top:14px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;}
-.t-employer{font-size:12px;font-weight:600;color:#111;letter-spacing:0.06em;}
-.t-sep{font-size:12px;color:#ccc;}
-.t-type{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#999;}
+/* Tombstone footer — no top border, vertically centered in fixed height area */
+.t-footer{width:100%;height:48px;border-top:1px solid #e0ddd5;display:flex;align-items:center;justify-content:center;gap:8px;flex-shrink:0;}
+.t-employer{font-size:13px;font-weight:600;color:#111;letter-spacing:0.06em;}
+.t-sep{font-size:13px;color:#ccc;}
+.t-type{font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#999;}
  
 /* Logo fallback text */
-.logo-text{font-size:12px;font-weight:500;color:#333;line-height:1.3;text-align:center;}
+.logo-text{font-size:13px;font-weight:500;color:#333;line-height:1.3;text-align:center;}
  
 /* CONTACT */
 .contact-card{background:#fff;padding:28px 24px;display:flex;flex-direction:column;gap:12px;justify-content:center;border:3px solid transparent;}
@@ -75,12 +77,14 @@ footer{background:#fff;border-top:1px solid #e0ddd5;padding:18px 48px;text-align
   .topbar{height:auto;flex-wrap:wrap;}
   .filterbar{width:100%;border-bottom:1px solid #e0ddd5;}
   .filter-btn{padding:10px 14px;font-size:9px;flex:1;}
-  .stats-bar{width:100%;border-left:none;justify-content:space-around;}
-  .stat{padding:8px 12px;border-right:none;border-left:1px solid #e0ddd5;}
+  .stats-bar{width:100%;border-left:none;height:48px;}
+  .stat{border-left:none;border-right:none;}
+  .stat:first-child{border-left:1px solid #e0ddd5;}
+  .stat:last-child{border-right:1px solid #e0ddd5;}
   .t-logo{height:60px;}
-  .t-logo img{height:52px;}
-  .t-logo-sub{height:28px;}
-  .t-logo-sub img{height:24px;}
+  .t-logo img{height:54px;}
+  .t-logo-sub{height:36px;}
+  .t-logo-sub img{height:32px;}
 }
 @media(max-width:480px){.tombstone-grid{grid-template-columns:1fr;}}
 </style>
@@ -106,353 +110,353 @@ footer{background:#fff;border-top:1px solid #e0ddd5;padding:18px 48px;text-align
   <!-- Feb 2025 -->
   <a href="sirius-solutions-eteam-2025.html" class="tombstone" data-type="buy">
     <div class="t-date">February 2025</div>
-    <div class="t-logo"><img src="logos/eteam.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">eTeam</span></div>
-    <div class="t-action">has acquired</div>
-    <div class="t-divider"></div>
-    <div class="t-logo"><img src="logos/siriussolutions.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Sirius Solutions</span></div>
-    <div class="t-spacer"></div>
+    <div class="t-body">
+      <div class="t-logo"><img src="logos/eteam.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">eTeam</span></div>
+      <div class="t-action">has acquired</div>
+      <div class="t-logo"><img src="logos/siriussolutions.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Sirius Solutions</span></div>
+    </div>
     <div class="t-footer"><span class="t-employer">eTeam</span><span class="t-sep">·</span><span class="t-type">Buy-Side</span></div>
   </a>
  
   <!-- Nov 2024 -->
   <a href="talmix-eteam-2024.html" class="tombstone" data-type="buy">
     <div class="t-date">November 2024</div>
-    <div class="t-logo"><img src="logos/eteam.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">eTeam</span></div>
-    <div class="t-action">has formed a strategic partnership with</div>
-    <div class="t-divider"></div>
-    <div class="t-logo"><img src="logos/talmix.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">TalMix</span></div>
-    <div class="t-spacer"></div>
+    <div class="t-body">
+      <div class="t-logo"><img src="logos/eteam.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">eTeam</span></div>
+      <div class="t-action">has formed a strategic partnership with</div>
+      <div class="t-logo"><img src="logos/talmix.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">TalMix</span></div>
+    </div>
     <div class="t-footer"><span class="t-employer">eTeam</span><span class="t-sep">·</span><span class="t-type">Buy-Side</span></div>
   </a>
  
   <!-- Jul 2024 -->
   <a href="elements-talent-eteam-2024.html" class="tombstone" data-type="buy">
     <div class="t-date">July 2024</div>
-    <div class="t-logo"><img src="logos/eteam.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">eTeam</span></div>
-    <div class="t-action">has formed a strategic partnership with</div>
-    <div class="t-divider"></div>
-    <div class="t-logo"><img src="logos/elements.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Elements</span></div>
-    <div class="t-spacer"></div>
+    <div class="t-body">
+      <div class="t-logo"><img src="logos/eteam.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">eTeam</span></div>
+      <div class="t-action">has formed a strategic partnership with</div>
+      <div class="t-logo"><img src="logos/elements.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Elements</span></div>
+    </div>
     <div class="t-footer"><span class="t-employer">eTeam</span><span class="t-sep">·</span><span class="t-type">Buy-Side</span></div>
   </a>
  
   <!-- Mar 2024 Sell-Side -->
   <a href="american-insulated-glass-trulite-2024.html" class="tombstone" data-type="sell">
     <div class="t-date">March 2024</div>
-    <div class="t-logo"><img src="logos/americaninsulatedglass.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">American Insulated Glass</span></div>
-    <div class="t-portfolio">a portfolio company of</div>
-    <div class="t-logo-sub"><img src="logos/avcapital.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none;font-size:9px;">AV Capital</span></div>
-    <div class="t-action">has been acquired by</div>
-    <div class="t-divider"></div>
-    <div class="t-logo"><img src="logos/trulite.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Trulite</span></div>
-    <div class="t-portfolio">a portfolio company of</div>
-    <div class="t-logo-sub"><img src="logos/truelinkcapital.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none;font-size:9px;">Truelink Capital</span></div>
-    <div class="t-spacer"></div>
+    <div class="t-body">
+      <div class="t-logo"><img src="logos/americaninsulatedglass.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">American Insulated Glass</span></div>
+      <div class="t-portfolio">a portfolio company of</div>
+      <div class="t-logo-sub"><img src="logos/avcapital.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">AV Capital</span></div>
+      <div class="t-action">has been acquired by</div>
+      <div class="t-logo"><img src="logos/trulite.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Trulite</span></div>
+      <div class="t-portfolio">a portfolio company of</div>
+      <div class="t-logo-sub"><img src="logos/truelinkcapital.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Truelink Capital</span></div>
+    </div>
     <div class="t-footer"><span class="t-employer">Stifel</span><span class="t-sep">·</span><span class="t-type">Sell-Side</span></div>
   </a>
  
-  <!-- Mar 2024 Capital Markets (NEW) -->
+  <!-- Mar 2024 Capital Markets -->
   <a href="trulite-term-loan-2024.html" class="tombstone" data-type="capital">
     <div class="t-date">March 2024</div>
-    <div class="t-logo"><img src="logos/trulite.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Trulite</span></div>
-    <div class="t-portfolio">a portfolio company of</div>
-    <div class="t-logo-sub"><img src="logos/truelinkcapital.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none;font-size:9px;">Truelink Capital</span></div>
-    <div class="t-divider"></div>
-    <div class="t-amount">$400,000,000</div>
-    <div class="t-amount-label">First-Lien Term Loan B</div>
-    <div class="t-spacer"></div>
+    <div class="t-body">
+      <div class="t-logo"><img src="logos/trulite.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Trulite</span></div>
+      <div class="t-portfolio">a portfolio company of</div>
+      <div class="t-logo-sub"><img src="logos/truelinkcapital.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Truelink Capital</span></div>
+      <div class="t-amount">$400,000,000</div>
+      <div class="t-amount-label">First-Lien Term Loan B</div>
+    </div>
     <div class="t-footer"><span class="t-employer">Stifel</span><span class="t-sep">·</span><span class="t-type">Capital Markets</span></div>
   </a>
  
   <!-- Aug 2023 -->
   <a href="transportation-logistics-2023.html" class="tombstone" data-type="sell">
     <div class="t-date">August 2023</div>
-    <div class="t-logo"><img src="logos/ascent.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Ascent</span></div>
-    <div class="t-portfolio">a portfolio company of</div>
-    <div class="t-logo-sub"><img src="logos/elliott.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none;font-size:9px;">Elliott</span></div>
-    <div class="t-action">has been acquired by</div>
-    <div class="t-divider"></div>
-    <div class="t-logo"><img src="logos/hig.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">H.I.G. Capital</span></div>
-    <div class="t-spacer"></div>
+    <div class="t-body">
+      <div class="t-logo"><img src="logos/ascent.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Ascent</span></div>
+      <div class="t-portfolio">a portfolio company of</div>
+      <div class="t-logo-sub"><img src="logos/elliott.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Elliott</span></div>
+      <div class="t-action">has been acquired by</div>
+      <div class="t-logo"><img src="logos/hig.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">H.I.G. Capital</span></div>
+    </div>
     <div class="t-footer"><span class="t-employer">Stifel</span><span class="t-sep">·</span><span class="t-type">Sell-Side</span></div>
   </a>
  
   <!-- May 2023 Imperial Dade -->
   <a href="imperial-dade-debt-2022.html" class="tombstone" data-type="capital">
     <div class="t-date">May 2023</div>
-    <div class="t-logo"><img src="logos/imperialdade.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Imperial Dade</span></div>
-    <div class="t-portfolio">a portfolio company of</div>
-    <div class="t-logo-sub">
-      <img src="logos/baincapital.png" onerror="this.style.display='none'">
-      <img src="logos/advent.png" onerror="this.style.display='none'">
+    <div class="t-body">
+      <div class="t-logo"><img src="logos/imperialdade.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Imperial Dade</span></div>
+      <div class="t-portfolio">a portfolio company of</div>
+      <div class="t-logo-sub">
+        <img src="logos/baincapital.png" style="height:44px;width:50%;object-fit:contain;opacity:0.8;" onerror="this.style.display='none'">
+        <img src="logos/advent.png" style="height:44px;width:50%;object-fit:contain;opacity:0.8;" onerror="this.style.display='none'">
+      </div>
+      <div class="t-amount">$2,003,000,000</div>
+      <div class="t-amount-label">Senior Secured Credit Facilities</div>
     </div>
-    <div class="t-divider"></div>
-    <div class="t-amount">$2,003,000,000</div>
-    <div class="t-amount-label">Senior Secured Credit Facilities</div>
-    <div class="t-spacer"></div>
     <div class="t-footer"><span class="t-employer">Stifel</span><span class="t-sep">·</span><span class="t-type">Capital Markets</span></div>
   </a>
  
-  <!-- May 2023 Tecnoglass (NEW) -->
+  <!-- May 2023 Tecnoglass -->
   <a href="tecnoglass-2023.html" class="tombstone" data-type="capital">
     <div class="t-date">May 2023</div>
-    <div class="t-logo"><img src="logos/tecnoglass-logo.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Tecnoglass</span></div>
-    <div class="t-divider"></div>
-    <div class="t-amount">$98,900,000</div>
-    <div class="t-amount-label">Follow-on Offering</div>
-    <div class="t-spacer"></div>
+    <div class="t-body">
+      <div class="t-logo"><img src="logos/tecnoglass-logo.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Tecnoglass</span></div>
+      <div class="t-amount">$98,900,000</div>
+      <div class="t-amount-label">Follow-on Offering</div>
+    </div>
     <div class="t-footer"><span class="t-employer">Stifel</span><span class="t-sep">·</span><span class="t-type">Capital Markets</span></div>
   </a>
  
   <!-- Feb 2023 Hillman -->
   <a href="hillman-followon-feb-2023.html" class="tombstone" data-type="capital">
     <div class="t-date">February 2023</div>
-    <div class="t-logo"><img src="logos/hillman_transparent.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Hillman</span></div>
-    <div class="t-portfolio">a portfolio company of</div>
-    <div class="t-logo-sub"><img src="logos/ccmp.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none;font-size:9px;">CCMP</span></div>
-    <div class="t-divider"></div>
-    <div class="t-amount">$230,000,000</div>
-    <div class="t-amount-label">Follow-on Offering</div>
-    <div class="t-spacer"></div>
+    <div class="t-body">
+      <div class="t-logo"><img src="logos/hillman_transparent.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Hillman</span></div>
+      <div class="t-portfolio">a portfolio company of</div>
+      <div class="t-logo-sub"><img src="logos/ccmp.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">CCMP</span></div>
+      <div class="t-amount">$230,000,000</div>
+      <div class="t-amount-label">Follow-on Offering</div>
+    </div>
     <div class="t-footer"><span class="t-employer">Stifel</span><span class="t-sep">·</span><span class="t-type">Capital Markets</span></div>
   </a>
  
   <!-- Nov 2021 Millennium -->
   <a href="millennium-distribution-bradyifs-2021.html" class="tombstone" data-type="sell">
     <div class="t-date">November 2021</div>
-    <div class="t-logo"><img src="logos/millennium.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Millennium Distribution</span></div>
-    <div class="t-action">has been acquired by</div>
-    <div class="t-divider"></div>
-    <div class="t-logo"><img src="logos/BradyPLUS_Logo.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">BradyPLUS</span></div>
-    <div class="t-portfolio">a portfolio company of</div>
-    <div class="t-logo-sub"><img src="logos/kelso.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none;font-size:9px;">Kelso</span></div>
-    <div class="t-spacer"></div>
+    <div class="t-body">
+      <div class="t-logo"><img src="logos/millennium.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Millennium Distribution</span></div>
+      <div class="t-action">has been acquired by</div>
+      <div class="t-logo"><img src="logos/BradyPLUS_Logo.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">BradyPLUS</span></div>
+      <div class="t-portfolio">a portfolio company of</div>
+      <div class="t-logo-sub"><img src="logos/kelso.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Kelso</span></div>
+    </div>
     <div class="t-footer"><span class="t-employer">Stifel</span><span class="t-sep">·</span><span class="t-type">Sell-Side</span></div>
   </a>
  
   <!-- Nov 2021 Penn Jersey -->
   <a href="penn-jersey-paper-envoy-2021.html" class="tombstone" data-type="sell">
     <div class="t-date">November 2021</div>
-    <div class="t-logo"><img src="logos/pjp.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Penn Jersey Paper</span></div>
-    <div class="t-action">has been acquired by</div>
-    <div class="t-divider"></div>
-    <div class="t-logo"><img src="logos/Envoy_Solutions_Logo.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Envoy Solutions</span></div>
-    <div class="t-spacer"></div>
+    <div class="t-body">
+      <div class="t-logo"><img src="logos/pjp.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Penn Jersey Paper</span></div>
+      <div class="t-action">has been acquired by</div>
+      <div class="t-logo"><img src="logos/Envoy_Solutions_Logo.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Envoy Solutions</span></div>
+    </div>
     <div class="t-footer"><span class="t-employer">Stifel</span><span class="t-sep">·</span><span class="t-type">Sell-Side</span></div>
   </a>
  
   <!-- Oct 2021 T-H Marine -->
   <a href="th-marine-onewater-2021.html" class="tombstone" data-type="buy">
     <div class="t-date">October 2021</div>
-    <div class="t-logo"><img src="logos/OneWater.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">OneWater Marine</span></div>
-    <div class="t-action">has acquired</div>
-    <div class="t-divider"></div>
-    <div class="t-logo"><img src="logos/T-HMarine.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">T-H Marine</span></div>
-    <div class="t-portfolio">a portfolio company of</div>
-    <div class="t-logo-sub"><img src="logos/valesco.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none;font-size:9px;">Valesco</span></div>
-    <div class="t-spacer"></div>
+    <div class="t-body">
+      <div class="t-logo"><img src="logos/OneWater.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">OneWater Marine</span></div>
+      <div class="t-action">has acquired</div>
+      <div class="t-logo"><img src="logos/T-HMarine.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">T-H Marine</span></div>
+      <div class="t-portfolio">a portfolio company of</div>
+      <div class="t-logo-sub"><img src="logos/valesco.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Valesco</span></div>
+    </div>
     <div class="t-footer"><span class="t-employer">Stifel</span><span class="t-sep">·</span><span class="t-type">Buy-Side</span></div>
   </a>
  
   <!-- Dec 2020 System One -->
   <a href="system-one-oaktree-2020.html" class="tombstone" data-type="sell">
     <div class="t-date">December 2020</div>
-    <div class="t-logo"><img src="logos/systemone.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">System One</span></div>
-    <div class="t-portfolio">a portfolio company of</div>
-    <div class="t-logo-sub"><img src="logos/thomashlee_website.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none;font-size:9px;">Thomas H. Lee</span></div>
-    <div class="t-action">has been acquired by</div>
-    <div class="t-divider"></div>
-    <div class="t-logo"><img src="logos/oaktree.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Oaktree Capital</span></div>
-    <div class="t-spacer"></div>
+    <div class="t-body">
+      <div class="t-logo"><img src="logos/systemone.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">System One</span></div>
+      <div class="t-portfolio">a portfolio company of</div>
+      <div class="t-logo-sub"><img src="logos/thomashlee_website.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Thomas H. Lee</span></div>
+      <div class="t-action">has been acquired by</div>
+      <div class="t-logo"><img src="logos/oaktree.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Oaktree Capital</span></div>
+    </div>
     <div class="t-footer"><span class="t-employer">System One</span><span class="t-sep">·</span><span class="t-type">Sell-Side</span></div>
   </a>
  
   <!-- Jun 2020 Syneos -->
   <a href="syneos-contingent-staffing-2020.html" class="tombstone" data-type="buy">
     <div class="t-date">June 2020</div>
-    <div class="t-logo"><img src="logos/systemone.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">System One</span></div>
-    <div class="t-portfolio">a portfolio company of</div>
-    <div class="t-logo-sub"><img src="logos/thomashlee_website.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none;font-size:9px;">Thomas H. Lee</span></div>
-    <div class="t-action">has acquired a division of</div>
-    <div class="t-divider"></div>
-    <div class="t-logo"><img src="logos/syneos.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Syneos Health</span></div>
-    <div class="t-spacer"></div>
+    <div class="t-body">
+      <div class="t-logo"><img src="logos/systemone.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">System One</span></div>
+      <div class="t-portfolio">a portfolio company of</div>
+      <div class="t-logo-sub"><img src="logos/thomashlee_website.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Thomas H. Lee</span></div>
+      <div class="t-action">has acquired a division of</div>
+      <div class="t-logo"><img src="logos/syneos.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Syneos Health</span></div>
+    </div>
     <div class="t-footer"><span class="t-employer">System One</span><span class="t-sep">·</span><span class="t-type">Buy-Side</span></div>
   </a>
  
   <!-- Jan 2020 Level 5 -->
   <a href="level5-consulting-systemone-2020.html" class="tombstone" data-type="buy">
     <div class="t-date">January 2020</div>
-    <div class="t-logo"><img src="logos/systemone.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">System One</span></div>
-    <div class="t-portfolio">a portfolio company of</div>
-    <div class="t-logo-sub"><img src="logos/thomashlee_website.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none;font-size:9px;">Thomas H. Lee</span></div>
-    <div class="t-action">has acquired</div>
-    <div class="t-divider"></div>
-    <div class="t-logo"><img src="logos/level5.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Level 5 Consulting</span></div>
-    <div class="t-spacer"></div>
+    <div class="t-body">
+      <div class="t-logo"><img src="logos/systemone.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">System One</span></div>
+      <div class="t-portfolio">a portfolio company of</div>
+      <div class="t-logo-sub"><img src="logos/thomashlee_website.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Thomas H. Lee</span></div>
+      <div class="t-action">has acquired</div>
+      <div class="t-logo"><img src="logos/level5.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Level 5 Consulting</span></div>
+    </div>
     <div class="t-footer"><span class="t-employer">System One</span><span class="t-sep">·</span><span class="t-type">Buy-Side</span></div>
   </a>
  
   <!-- Jul 2019 Rowland -->
   <a href="rowland-group-systemone-2019.html" class="tombstone" data-type="buy">
     <div class="t-date">July 2019</div>
-    <div class="t-logo"><img src="logos/systemone.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">System One</span></div>
-    <div class="t-portfolio">a portfolio company of</div>
-    <div class="t-logo-sub"><img src="logos/thomashlee_website.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none;font-size:9px;">Thomas H. Lee</span></div>
-    <div class="t-action">has acquired</div>
-    <div class="t-divider"></div>
-    <div class="t-logo"><img src="logos/rowlandgroup.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">The Rowland Group</span></div>
-    <div class="t-spacer"></div>
+    <div class="t-body">
+      <div class="t-logo"><img src="logos/systemone.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">System One</span></div>
+      <div class="t-portfolio">a portfolio company of</div>
+      <div class="t-logo-sub"><img src="logos/thomashlee_website.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Thomas H. Lee</span></div>
+      <div class="t-action">has acquired</div>
+      <div class="t-logo"><img src="logos/rowlandgroup.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">The Rowland Group</span></div>
+    </div>
     <div class="t-footer"><span class="t-employer">System One</span><span class="t-sep">·</span><span class="t-type">Buy-Side</span></div>
   </a>
  
   <!-- Jun 2019 Cohesion -->
   <a href="cohesion-consulting-systemone-2019.html" class="tombstone" data-type="buy">
     <div class="t-date">June 2019</div>
-    <div class="t-logo"><img src="logos/systemone.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">System One</span></div>
-    <div class="t-portfolio">a portfolio company of</div>
-    <div class="t-logo-sub"><img src="logos/thomashlee_website.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none;font-size:9px;">Thomas H. Lee</span></div>
-    <div class="t-action">has acquired</div>
-    <div class="t-divider"></div>
-    <div class="t-logo"><img src="logos/cohesion.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Cohesion Consulting</span></div>
-    <div class="t-spacer"></div>
+    <div class="t-body">
+      <div class="t-logo"><img src="logos/systemone.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">System One</span></div>
+      <div class="t-portfolio">a portfolio company of</div>
+      <div class="t-logo-sub"><img src="logos/thomashlee_website.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Thomas H. Lee</span></div>
+      <div class="t-action">has acquired</div>
+      <div class="t-logo"><img src="logos/cohesion.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Cohesion Consulting</span></div>
+    </div>
     <div class="t-footer"><span class="t-employer">System One</span><span class="t-sep">·</span><span class="t-type">Buy-Side</span></div>
   </a>
  
   <!-- Sep 2018 TekPartners -->
   <a href="tekpartners-government-systemone-2018.html" class="tombstone" data-type="buy">
     <div class="t-date">September 2018</div>
-    <div class="t-logo"><img src="logos/systemone.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">System One</span></div>
-    <div class="t-portfolio">a portfolio company of</div>
-    <div class="t-logo-sub"><img src="logos/thomashlee_website.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none;font-size:9px;">Thomas H. Lee</span></div>
-    <div class="t-action">has acquired</div>
-    <div class="t-divider"></div>
-    <div class="t-logo"><img src="logos/tpgs.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">TekPartners Gov. Services</span></div>
-    <div class="t-spacer"></div>
+    <div class="t-body">
+      <div class="t-logo"><img src="logos/systemone.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">System One</span></div>
+      <div class="t-portfolio">a portfolio company of</div>
+      <div class="t-logo-sub"><img src="logos/thomashlee_website.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Thomas H. Lee</span></div>
+      <div class="t-action">has acquired</div>
+      <div class="t-logo"><img src="logos/tpgs.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">TekPartners Gov. Services</span></div>
+    </div>
     <div class="t-footer"><span class="t-employer">System One</span><span class="t-sep">·</span><span class="t-type">Buy-Side</span></div>
   </a>
  
   <!-- Aug 2018 NTP Wireless -->
   <a href="ntp-wireless-systemone-2018.html" class="tombstone" data-type="buy">
     <div class="t-date">August 2018</div>
-    <div class="t-logo"><img src="logos/systemone.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">System One</span></div>
-    <div class="t-portfolio">a portfolio company of</div>
-    <div class="t-logo-sub"><img src="logos/thomashlee_website.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none;font-size:9px;">Thomas H. Lee</span></div>
-    <div class="t-action">has acquired</div>
-    <div class="t-divider"></div>
-    <div class="t-logo"><img src="logos/ntpwireless.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">NTP Wireless</span></div>
-    <div class="t-spacer"></div>
+    <div class="t-body">
+      <div class="t-logo"><img src="logos/systemone.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">System One</span></div>
+      <div class="t-portfolio">a portfolio company of</div>
+      <div class="t-logo-sub"><img src="logos/thomashlee_website.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Thomas H. Lee</span></div>
+      <div class="t-action">has acquired</div>
+      <div class="t-logo"><img src="logos/ntpwireless.jpg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">NTP Wireless</span></div>
+    </div>
     <div class="t-footer"><span class="t-employer">System One</span><span class="t-sep">·</span><span class="t-type">Buy-Side</span></div>
   </a>
  
   <!-- Jul 2018 TRUS -->
   <a href="trus-systemone-2018.html" class="tombstone" data-type="buy">
     <div class="t-date">July 2018</div>
-    <div class="t-logo"><img src="logos/systemone.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">System One</span></div>
-    <div class="t-portfolio">a portfolio company of</div>
-    <div class="t-logo-sub"><img src="logos/thomashlee_website.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none;font-size:9px;">Thomas H. Lee</span></div>
-    <div class="t-action">has acquired</div>
-    <div class="t-divider"></div>
-    <div class="t-logo"><img src="logos/trus.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Transformer Repair Utility Services</span></div>
-    <div class="t-spacer"></div>
+    <div class="t-body">
+      <div class="t-logo"><img src="logos/systemone.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">System One</span></div>
+      <div class="t-portfolio">a portfolio company of</div>
+      <div class="t-logo-sub"><img src="logos/thomashlee_website.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Thomas H. Lee</span></div>
+      <div class="t-action">has acquired</div>
+      <div class="t-logo"><img src="logos/trus.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Transformer Repair Utility Services</span></div>
+    </div>
     <div class="t-footer"><span class="t-employer">System One</span><span class="t-sep">·</span><span class="t-type">Buy-Side</span></div>
   </a>
  
   <!-- Jan 2018 Juvo -->
   <a href="juvo-telecom-systemone-2018.html" class="tombstone" data-type="buy">
     <div class="t-date">January 2018</div>
-    <div class="t-logo"><img src="logos/systemone.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">System One</span></div>
-    <div class="t-portfolio">a portfolio company of</div>
-    <div class="t-logo-sub"><img src="logos/thomashlee_website.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none;font-size:9px;">Thomas H. Lee</span></div>
-    <div class="t-action">has acquired</div>
-    <div class="t-divider"></div>
-    <div class="t-logo"><img src="logos/juvo.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Juvo Telecom</span></div>
-    <div class="t-spacer"></div>
+    <div class="t-body">
+      <div class="t-logo"><img src="logos/systemone.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">System One</span></div>
+      <div class="t-portfolio">a portfolio company of</div>
+      <div class="t-logo-sub"><img src="logos/thomashlee_website.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Thomas H. Lee</span></div>
+      <div class="t-action">has acquired</div>
+      <div class="t-logo"><img src="logos/juvo.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Juvo Telecom</span></div>
+    </div>
     <div class="t-footer"><span class="t-employer">System One</span><span class="t-sep">·</span><span class="t-type">Buy-Side</span></div>
   </a>
  
   <!-- Dec 2017 GAP -->
   <a href="gap-solutions-systemone-2017.html" class="tombstone" data-type="buy">
     <div class="t-date">December 2017</div>
-    <div class="t-logo"><img src="logos/systemone.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">System One</span></div>
-    <div class="t-portfolio">a portfolio company of</div>
-    <div class="t-logo-sub"><img src="logos/thomashlee_website.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none;font-size:9px;">Thomas H. Lee</span></div>
-    <div class="t-action">has acquired</div>
-    <div class="t-divider"></div>
-    <div class="t-logo"><img src="logos/GAP.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">GAP Solutions</span></div>
-    <div class="t-spacer"></div>
+    <div class="t-body">
+      <div class="t-logo"><img src="logos/systemone.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">System One</span></div>
+      <div class="t-portfolio">a portfolio company of</div>
+      <div class="t-logo-sub"><img src="logos/thomashlee_website.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Thomas H. Lee</span></div>
+      <div class="t-action">has acquired</div>
+      <div class="t-logo"><img src="logos/GAP.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">GAP Solutions</span></div>
+    </div>
     <div class="t-footer"><span class="t-employer">System One</span><span class="t-sep">·</span><span class="t-type">Buy-Side</span></div>
   </a>
  
   <!-- Sep 2016 Team People -->
   <a href="team-people-systemone-2016.html" class="tombstone" data-type="buy">
     <div class="t-date">September 2016</div>
-    <div class="t-logo"><img src="logos/systemone.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">System One</span></div>
-    <div class="t-portfolio">a portfolio company of</div>
-    <div class="t-logo-sub"><img src="logos/thomashlee_website.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none;font-size:9px;">Thomas H. Lee</span></div>
-    <div class="t-action">has acquired</div>
-    <div class="t-divider"></div>
-    <div class="t-logo"><img src="logos/teampeople.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Team People</span></div>
-    <div class="t-spacer"></div>
+    <div class="t-body">
+      <div class="t-logo"><img src="logos/systemone.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">System One</span></div>
+      <div class="t-portfolio">a portfolio company of</div>
+      <div class="t-logo-sub"><img src="logos/thomashlee_website.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Thomas H. Lee</span></div>
+      <div class="t-action">has acquired</div>
+      <div class="t-logo"><img src="logos/teampeople.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Team People</span></div>
+    </div>
     <div class="t-footer"><span class="t-employer">System One</span><span class="t-sep">·</span><span class="t-type">Buy-Side</span></div>
   </a>
  
   <!-- Feb 2016 Cascade -->
   <a href="cascade-windows-centeroak-2016.html" class="tombstone" data-type="sell">
     <div class="t-date">February 2016</div>
-    <div class="t-logo"><img src="logos/cascade.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Cascade Windows</span></div>
-    <div class="t-portfolio">a portfolio company of</div>
-    <div class="t-logo-sub"><img src="logos/altamont.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none;font-size:9px;">Altamont Capital</span></div>
-    <div class="t-action">has been acquired by</div>
-    <div class="t-divider"></div>
-    <div class="t-logo"><img src="logos/centeroak.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">CenterOak Partners</span></div>
-    <div class="t-spacer"></div>
+    <div class="t-body">
+      <div class="t-logo"><img src="logos/cascade.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Cascade Windows</span></div>
+      <div class="t-portfolio">a portfolio company of</div>
+      <div class="t-logo-sub"><img src="logos/altamont.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Altamont Capital</span></div>
+      <div class="t-action">has been acquired by</div>
+      <div class="t-logo"><img src="logos/centeroak.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">CenterOak Partners</span></div>
+    </div>
     <div class="t-footer"><span class="t-employer">KeyBanc</span><span class="t-sep">·</span><span class="t-type">Sell-Side</span></div>
   </a>
  
   <!-- Sep 2015 Watts Water -->
   <a href="watts-water-brass-sioux-chief-2015.html" class="tombstone" data-type="sell">
     <div class="t-date">September 2015</div>
-    <div class="t-logo"><img src="logos/watts.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Watts Water</span></div>
-    <div class="t-action">a division has been acquired by</div>
-    <div class="t-divider"></div>
-    <div class="t-logo"><img src="logos/siouxchief.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Sioux Chief</span></div>
-    <div class="t-spacer"></div>
+    <div class="t-body">
+      <div class="t-logo"><img src="logos/watts.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Watts Water</span></div>
+      <div class="t-action">a division has been acquired by</div>
+      <div class="t-logo"><img src="logos/siouxchief.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Sioux Chief</span></div>
+    </div>
     <div class="t-footer"><span class="t-employer">KeyBanc</span><span class="t-sep">·</span><span class="t-type">Sell-Side</span></div>
   </a>
  
   <!-- May 2014 TIGG -->
   <a href="tigg-corporation-alliance-2014.html" class="tombstone" data-type="sell">
     <div class="t-date">May 2014</div>
-    <div class="t-logo"><img src="logos/tigg.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">TIGG Corporation</span></div>
-    <div class="t-action">has been acquired by</div>
-    <div class="t-divider"></div>
-    <div class="t-logo"><img src="logos/spencerturbine.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">The Spencer Turbine Co.</span></div>
-    <div class="t-portfolio">a portfolio company of</div>
-    <div class="t-logo-sub"><img src="logos/alliance.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none;font-size:9px;">Alliance Holdings</span></div>
-    <div class="t-spacer"></div>
+    <div class="t-body">
+      <div class="t-logo"><img src="logos/tigg.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">TIGG Corporation</span></div>
+      <div class="t-action">has been acquired by</div>
+      <div class="t-logo"><img src="logos/spencerturbine.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">The Spencer Turbine Co.</span></div>
+      <div class="t-portfolio">a portfolio company of</div>
+      <div class="t-logo-sub"><img src="logos/alliance.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Alliance Holdings</span></div>
+    </div>
     <div class="t-footer"><span class="t-employer">Schneider Downs</span><span class="t-sep">·</span><span class="t-type">Sell-Side</span></div>
   </a>
  
   <!-- Dec 2013 Powerohm -->
   <a href="powerohm-resistor-hubbell-2013.html" class="tombstone" data-type="sell">
     <div class="t-date">December 2013</div>
-    <div class="t-logo"><img src="logos/powerohm.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Powerohm Resistor</span></div>
-    <div class="t-action">has been acquired by</div>
-    <div class="t-divider"></div>
-    <div class="t-logo"><img src="logos/hubbell_transparent.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Hubbell</span></div>
-    <div class="t-spacer"></div>
+    <div class="t-body">
+      <div class="t-logo"><img src="logos/powerohm.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Powerohm Resistor</span></div>
+      <div class="t-action">has been acquired by</div>
+      <div class="t-logo"><img src="logos/hubbell_transparent.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Hubbell</span></div>
+    </div>
     <div class="t-footer"><span class="t-employer">Schneider Downs</span><span class="t-sep">·</span><span class="t-type">Sell-Side</span></div>
   </a>
  
   <!-- Oct 2013 RISE Properties -->
   <a href="rise-properties-student-housing-2013.html" class="tombstone" data-type="capital">
     <div class="t-date">October 2013</div>
-    <div class="t-logo"><img src="logos/riseproperties.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">RISE Properties</span></div>
-    <div class="t-action">has raised equity for a</div>
-    <div class="t-divider"></div>
-    <div class="t-amount-label" style="font-size:11px;color:#333;font-weight:500;line-height:1.4;">Student Housing Real Estate Development Project</div>
-    <div class="t-spacer"></div>
+    <div class="t-body">
+      <div class="t-logo"><img src="logos/riseproperties.jpeg" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">RISE Properties</span></div>
+      <div class="t-action">has raised equity for a</div>
+      <div class="t-amount-label" style="font-size:13px;color:#333;font-weight:500;line-height:1.4;">Student Housing Real Estate Development Project</div>
+    </div>
     <div class="t-footer"><span class="t-employer">Schneider Downs</span><span class="t-sep">·</span><span class="t-type">Capital Markets</span></div>
   </a>
  
