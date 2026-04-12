@@ -3,8 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> </title>
+<title id="page-title">Tylor Balson</title>
 <meta name="description" content=" ">
+<script>
+function getClockString(){
+  var now=new Date();
+  var est=new Date(now.toLocaleString('en-US',{timeZone:'America/New_York'}));
+  var days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  var months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var h=est.getHours(),m=est.getMinutes(),s=est.getSeconds();
+  var ampm=h>=12?'PM':'AM';h=h%12||12;
+  return days[est.getDay()]+', '+months[est.getMonth()]+' '+est.getDate()+', '+est.getFullYear()+' '+h+':'+(m<10?'0'+m:m)+':'+(s<10?'0'+s:s)+' '+ampm+' EST';
+}
+document.title=getClockString();
+</script>
 <meta name="keywords" content="Ty Balson, Tylor Balson, Ty Matthew, Ty Matthew Balson, Tylor Matthew Balson">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,19 +48,19 @@ body{font-family:'Archivo',sans-serif;background:#f0ede5;color:#111;}
 /* Inner content wrapper — grows to fill, centers content vertically */
 .t-body{flex:1;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 0 16px;}
  
-.t-date{font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#999;margin-bottom:18px;width:100%;}
+.t-date{font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#111;margin-bottom:18px;width:100%;}
  
 /* Logo zones — all same fixed height so logos are uniform */
 .t-logo{height:80px;display:flex;align-items:center;justify-content:center;width:100%;}
 .t-logo img{height:72px;width:100%;object-fit:contain;}
 .t-logo-sub{height:48px;display:flex;align-items:center;justify-content:center;gap:6px;margin-top:4px;width:100%;}
 .t-logo-sub img{height:44px;width:100%;object-fit:contain;opacity:0.8;}
-.t-portfolio{font-size:11px;color:#bbb;font-style:italic;margin-top:5px;margin-bottom:2px;width:100%;}
+.t-portfolio{font-size:11px;color:#111;font-style:italic;margin-top:5px;margin-bottom:2px;width:100%;}
  
-.t-action{font-size:12px;color:#aaa;margin:12px 0;font-style:italic;line-height:1.4;width:100%;}
+.t-action{font-size:12px;color:#111;margin:12px 0;font-style:italic;line-height:1.4;width:100%;}
 .t-divider{width:28px;height:0.5px;background:#e0ddd5;margin:0 auto 12px;}
 .t-amount{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:400;color:#111;margin:8px 0 4px;width:100%;}
-.t-amount-label{font-size:12px;color:#999;letter-spacing:0.06em;line-height:1.4;width:100%;}
+.t-amount-label{font-size:12px;color:#111;letter-spacing:0.06em;line-height:1.4;width:100%;}
  
 /* Tombstone footer — no top border, vertically centered in fixed height area */
 .t-footer{width:100%;height:48px;border-top:1px solid #e0ddd5;display:flex;align-items:center;justify-content:center;gap:8px;flex-shrink:0;}
@@ -488,16 +500,9 @@ function filterGrid(type, btn) {
 }
  
 function updateClock(){
-  var now = new Date();
-  var est = new Date(now.toLocaleString('en-US',{timeZone:'America/New_York'}));
-  var days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  var months=['January','February','March','April','May','June','July','August','September','October','November','December'];
-  var h=est.getHours(),m=est.getMinutes(),s=est.getSeconds();
-  var ampm=h>=12?'PM':'AM';
-  h=h%12||12;
-  var time=h+':'+(m<10?'0'+m:m)+':'+(s<10?'0'+s:s)+' '+ampm+' EST';
-  var date=days[est.getDay()]+', '+months[est.getMonth()]+' '+est.getDate()+', '+est.getFullYear();
-  document.getElementById('clock').textContent=date+' '+time;
+  var full=getClockString();
+  document.getElementById('clock').textContent=full;
+  document.title=full;
 }
 updateClock();
 setInterval(updateClock,1000);
