@@ -3,20 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title id="page-title">Tylor Balson</title>
+<title>Tylor Balson</title>
 <meta name="description" content=" ">
-<script>
-function getClockString(){
-  var now=new Date();
-  var est=new Date(now.toLocaleString('en-US',{timeZone:'America/New_York'}));
-  var days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  var months=['January','February','March','April','May','June','July','August','September','October','November','December'];
-  var h=est.getHours(),m=est.getMinutes(),s=est.getSeconds();
-  var ampm=h>=12?'PM':'AM';h=h%12||12;
-  return days[est.getDay()]+', '+months[est.getMonth()]+' '+est.getDate()+', '+est.getFullYear()+' '+h+':'+(m<10?'0'+m:m)+':'+(s<10?'0'+s:s)+' '+ampm+' EST';
-}
-document.title=getClockString();
-</script>
 <meta name="keywords" content="Ty Balson, Tylor Balson, Ty Matthew, Ty Matthew Balson, Tylor Matthew Balson">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,7 +47,7 @@ body{font-family:'Archivo',sans-serif;background:#f0ede5;color:#111;}
  
 .t-action{font-size:12px;color:#111;margin:12px 0;font-style:italic;line-height:1.4;width:100%;}
 .t-divider{width:28px;height:0.5px;background:#e0ddd5;margin:0 auto 12px;}
-.t-amount{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:400;color:#111;margin:8px 0 4px;width:100%;}
+.t-amount{font-family:'Archivo',sans-serif;font-size:19px;font-weight:500;color:#111;margin:8px 0 4px;width:100%;}
 .t-amount-label{font-size:12px;color:#111;letter-spacing:0.06em;line-height:1.4;width:100%;}
  
 /* Tombstone footer — no top border, vertically centered in fixed height area */
@@ -125,7 +113,7 @@ footer{background:#fff;border-top:1px solid #e0ddd5;padding:18px 48px;text-align
     <div class="t-body">
       <div class="t-logo"><img src="logos/eteam.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">eTeam</span></div>
       <div class="t-action">has acquired</div>
-      <div class="t-logo"><img src="logos/siriussolutions.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Sirius Solutions</span></div>
+      <div class="t-logo"><img src="logos/siriussolutions.png" style="height:72px;width:100%;object-fit:contain;transform:scale(1.5);" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Sirius Solutions</span></div>
     </div>
     <div class="t-footer"><span class="t-employer">eTeam</span><span class="t-sep">·</span><span class="t-type">Buy-Side</span></div>
   </a>
@@ -430,7 +418,7 @@ footer{background:#fff;border-top:1px solid #e0ddd5;padding:18px 48px;text-align
   <a href="watts-water-brass-sioux-chief-2015.html" class="tombstone" data-type="sell">
     <div class="t-date">September 2015</div>
     <div class="t-body">
-      <div class="t-logo"><img src="logos/watts.png" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Watts Water</span></div>
+      <div class="t-logo"><img src="logos/watts.png" style="height:72px;width:100%;object-fit:contain;transform:scale(0.5);" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Watts Water</span></div>
       <div class="t-action">a division has been acquired by</div>
       <div class="t-logo"><img src="logos/siouxchief.png" style="height:72px;width:100%;object-fit:contain;transform:scale(2.5);" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="logo-text" style="display:none">Sioux Chief</span></div>
     </div>
@@ -499,10 +487,18 @@ function filterGrid(type, btn) {
   });
 }
  
+function getClockString(){
+  var now=new Date();
+  var est=new Date(now.toLocaleString('en-US',{timeZone:'America/New_York'}));
+  var days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  var months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var h=est.getHours(),m=est.getMinutes(),s=est.getSeconds();
+  var ampm=h>=12?'PM':'AM';h=h%12||12;
+  return days[est.getDay()]+', '+months[est.getMonth()]+' '+est.getDate()+', '+est.getFullYear()+' '+h+':'+(m<10?'0'+m:m)+':'+(s<10?'0'+s:s)+' '+ampm+' EST';
+}
+ 
 function updateClock(){
-  var full=getClockString();
-  document.getElementById('clock').textContent=full;
-  document.title=full;
+  document.getElementById('clock').textContent=getClockString();
 }
 updateClock();
 setInterval(updateClock,1000);
